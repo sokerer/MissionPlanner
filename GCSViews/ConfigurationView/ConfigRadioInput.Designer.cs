@@ -40,16 +40,22 @@ namespace MissionPlanner.GCSViews.ConfigurationView
             this.CHK_revch4 = new System.Windows.Forms.CheckBox();
             this.CHK_revch2 = new System.Windows.Forms.CheckBox();
             this.CHK_revch1 = new System.Windows.Forms.CheckBox();
-            this.BUT_Calibrateradio = new Controls.MyButton();
-            this.BAR8 = new HorizontalProgressBar2();
+            this.BAR14 = new MissionPlanner.Controls.HorizontalProgressBar2();
+            this.BAR13 = new MissionPlanner.Controls.HorizontalProgressBar2();
+            this.BAR12 = new MissionPlanner.Controls.HorizontalProgressBar2();
+            this.BAR11 = new MissionPlanner.Controls.HorizontalProgressBar2();
+            this.BAR10 = new MissionPlanner.Controls.HorizontalProgressBar2();
+            this.BAR9 = new MissionPlanner.Controls.HorizontalProgressBar2();
+            this.BUT_Calibrateradio = new MissionPlanner.Controls.MyButton();
+            this.BAR8 = new MissionPlanner.Controls.HorizontalProgressBar2();
+            this.BAR7 = new MissionPlanner.Controls.HorizontalProgressBar2();
+            this.BAR6 = new MissionPlanner.Controls.HorizontalProgressBar2();
+            this.BAR5 = new MissionPlanner.Controls.HorizontalProgressBar2();
+            this.BARpitch = new MissionPlanner.Controls.VerticalProgressBar2();
+            this.BARthrottle = new MissionPlanner.Controls.VerticalProgressBar2();
+            this.BARyaw = new MissionPlanner.Controls.HorizontalProgressBar2();
+            this.BARroll = new MissionPlanner.Controls.HorizontalProgressBar2();
             this.currentStateBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.BAR7 = new HorizontalProgressBar2();
-            this.BAR6 = new HorizontalProgressBar2();
-            this.BAR5 = new HorizontalProgressBar2();
-            this.BARpitch = new VerticalProgressBar2();
-            this.BARthrottle = new VerticalProgressBar2();
-            this.BARyaw = new HorizontalProgressBar2();
-            this.BARroll = new HorizontalProgressBar2();
             this.groupBoxElevons.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.currentStateBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -120,6 +126,90 @@ namespace MissionPlanner.GCSViews.ConfigurationView
             this.CHK_revch1.UseVisualStyleBackColor = true;
             this.CHK_revch1.CheckedChanged += new System.EventHandler(this.CHK_revch1_CheckedChanged);
             // 
+            // BAR14
+            // 
+            this.BAR14.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(255)))));
+            this.BAR14.BorderColor = System.Drawing.SystemColors.ActiveBorder;
+            this.BAR14.Label = "Radio 14";
+            resources.ApplyResources(this.BAR14, "BAR14");
+            this.BAR14.Maximum = 2200;
+            this.BAR14.maxline = 0;
+            this.BAR14.Minimum = 800;
+            this.BAR14.minline = 0;
+            this.BAR14.Name = "BAR14";
+            this.BAR14.Value = 1500;
+            this.BAR14.ValueColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(0)))), ((int)(((byte)(255)))));
+            // 
+            // BAR13
+            // 
+            this.BAR13.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(255)))));
+            this.BAR13.BorderColor = System.Drawing.SystemColors.ActiveBorder;
+            this.BAR13.Label = "Radio 13";
+            resources.ApplyResources(this.BAR13, "BAR13");
+            this.BAR13.Maximum = 2200;
+            this.BAR13.maxline = 0;
+            this.BAR13.Minimum = 800;
+            this.BAR13.minline = 0;
+            this.BAR13.Name = "BAR13";
+            this.BAR13.Value = 1500;
+            this.BAR13.ValueColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(0)))), ((int)(((byte)(255)))));
+            // 
+            // BAR12
+            // 
+            this.BAR12.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(255)))));
+            this.BAR12.BorderColor = System.Drawing.SystemColors.ActiveBorder;
+            this.BAR12.Label = "Radio 12";
+            resources.ApplyResources(this.BAR12, "BAR12");
+            this.BAR12.Maximum = 2200;
+            this.BAR12.maxline = 0;
+            this.BAR12.Minimum = 800;
+            this.BAR12.minline = 0;
+            this.BAR12.Name = "BAR12";
+            this.BAR12.Value = 1500;
+            this.BAR12.ValueColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(0)))), ((int)(((byte)(255)))));
+            // 
+            // BAR11
+            // 
+            this.BAR11.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(255)))));
+            this.BAR11.BorderColor = System.Drawing.SystemColors.ActiveBorder;
+            this.BAR11.Label = "Radio 11";
+            resources.ApplyResources(this.BAR11, "BAR11");
+            this.BAR11.Maximum = 2200;
+            this.BAR11.maxline = 0;
+            this.BAR11.Minimum = 800;
+            this.BAR11.minline = 0;
+            this.BAR11.Name = "BAR11";
+            this.BAR11.Value = 1500;
+            this.BAR11.ValueColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(0)))), ((int)(((byte)(255)))));
+            // 
+            // BAR10
+            // 
+            this.BAR10.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(255)))));
+            this.BAR10.BorderColor = System.Drawing.SystemColors.ActiveBorder;
+            this.BAR10.Label = "Radio 10";
+            resources.ApplyResources(this.BAR10, "BAR10");
+            this.BAR10.Maximum = 2200;
+            this.BAR10.maxline = 0;
+            this.BAR10.Minimum = 800;
+            this.BAR10.minline = 0;
+            this.BAR10.Name = "BAR10";
+            this.BAR10.Value = 1500;
+            this.BAR10.ValueColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(0)))), ((int)(((byte)(255)))));
+            // 
+            // BAR9
+            // 
+            this.BAR9.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(255)))));
+            this.BAR9.BorderColor = System.Drawing.SystemColors.ActiveBorder;
+            this.BAR9.Label = "Radio 9";
+            resources.ApplyResources(this.BAR9, "BAR9");
+            this.BAR9.Maximum = 2200;
+            this.BAR9.maxline = 0;
+            this.BAR9.Minimum = 800;
+            this.BAR9.minline = 0;
+            this.BAR9.Name = "BAR9";
+            this.BAR9.Value = 1500;
+            this.BAR9.ValueColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(0)))), ((int)(((byte)(255)))));
+            // 
             // BUT_Calibrateradio
             // 
             resources.ApplyResources(this.BUT_Calibrateradio, "BUT_Calibrateradio");
@@ -131,7 +221,6 @@ namespace MissionPlanner.GCSViews.ConfigurationView
             // 
             this.BAR8.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(255)))));
             this.BAR8.BorderColor = System.Drawing.SystemColors.ActiveBorder;
-            
             this.BAR8.Label = "Radio 8";
             resources.ApplyResources(this.BAR8, "BAR8");
             this.BAR8.Maximum = 2200;
@@ -140,17 +229,12 @@ namespace MissionPlanner.GCSViews.ConfigurationView
             this.BAR8.minline = 0;
             this.BAR8.Name = "BAR8";
             this.BAR8.Value = 1500;
-         this.BAR8.ValueColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(0)))), ((int)(((byte)(255)))));
-            // 
-            // currentStateBindingSource
-            // 
-            this.currentStateBindingSource.DataSource = typeof(MissionPlanner.CurrentState);
+            this.BAR8.ValueColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(0)))), ((int)(((byte)(255)))));
             // 
             // BAR7
             // 
             this.BAR7.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(255)))));
             this.BAR7.BorderColor = System.Drawing.SystemColors.ActiveBorder;
-            
             this.BAR7.Label = "Radio 7";
             resources.ApplyResources(this.BAR7, "BAR7");
             this.BAR7.Maximum = 2200;
@@ -165,7 +249,6 @@ namespace MissionPlanner.GCSViews.ConfigurationView
             // 
             this.BAR6.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(255)))));
             this.BAR6.BorderColor = System.Drawing.SystemColors.ActiveBorder;
-       
             this.BAR6.Label = "Radio 6";
             resources.ApplyResources(this.BAR6, "BAR6");
             this.BAR6.Maximum = 2200;
@@ -180,7 +263,6 @@ namespace MissionPlanner.GCSViews.ConfigurationView
             // 
             this.BAR5.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(255)))));
             this.BAR5.BorderColor = System.Drawing.SystemColors.ActiveBorder;
-            
             this.BAR5.Label = "Radio 5";
             resources.ApplyResources(this.BAR5, "BAR5");
             this.BAR5.Maximum = 2200;
@@ -195,7 +277,6 @@ namespace MissionPlanner.GCSViews.ConfigurationView
             // 
             this.BARpitch.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(255)))));
             this.BARpitch.BorderColor = System.Drawing.SystemColors.ActiveBorder;
-
             this.BARpitch.Label = "Pitch";
             resources.ApplyResources(this.BARpitch, "BARpitch");
             this.BARpitch.Maximum = 2200;
@@ -210,7 +291,6 @@ namespace MissionPlanner.GCSViews.ConfigurationView
             // 
             this.BARthrottle.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(68)))), ((int)(((byte)(69)))));
             this.BARthrottle.BorderColor = System.Drawing.SystemColors.ActiveBorder;
-            
             this.BARthrottle.Label = "Throttle";
             resources.ApplyResources(this.BARthrottle, "BARthrottle");
             this.BARthrottle.Maximum = 2200;
@@ -225,7 +305,6 @@ namespace MissionPlanner.GCSViews.ConfigurationView
             // 
             this.BARyaw.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(255)))));
             this.BARyaw.BorderColor = System.Drawing.SystemColors.ActiveBorder;
-            
             this.BARyaw.Label = "Yaw";
             resources.ApplyResources(this.BARyaw, "BARyaw");
             this.BARyaw.Maximum = 2200;
@@ -240,7 +319,6 @@ namespace MissionPlanner.GCSViews.ConfigurationView
             // 
             this.BARroll.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(255)))));
             this.BARroll.BorderColor = System.Drawing.SystemColors.ActiveBorder;
-          
             this.BARroll.Label = "Roll";
             resources.ApplyResources(this.BARroll, "BARroll");
             this.BARroll.Maximum = 2200;
@@ -251,10 +329,20 @@ namespace MissionPlanner.GCSViews.ConfigurationView
             this.BARroll.Value = 1500;
             this.BARroll.ValueColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(0)))), ((int)(((byte)(255)))));
             // 
+            // currentStateBindingSource
+            // 
+            this.currentStateBindingSource.DataSource = typeof(MissionPlanner.CurrentState);
+            // 
             // ConfigRadioInput
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.BAR14);
+            this.Controls.Add(this.BAR13);
+            this.Controls.Add(this.BAR12);
+            this.Controls.Add(this.BAR11);
+            this.Controls.Add(this.BAR10);
+            this.Controls.Add(this.BAR9);
             this.Controls.Add(this.groupBoxElevons);
             this.Controls.Add(this.CHK_revch3);
             this.Controls.Add(this.CHK_revch4);
@@ -299,5 +387,11 @@ namespace MissionPlanner.GCSViews.ConfigurationView
         private HorizontalProgressBar2 BARyaw;
         private HorizontalProgressBar2 BARroll;
         private System.Windows.Forms.BindingSource currentStateBindingSource;
+        private HorizontalProgressBar2 BAR9;
+        private HorizontalProgressBar2 BAR10;
+        private HorizontalProgressBar2 BAR11;
+        private HorizontalProgressBar2 BAR12;
+        private HorizontalProgressBar2 BAR13;
+        private HorizontalProgressBar2 BAR14;
     }
 }

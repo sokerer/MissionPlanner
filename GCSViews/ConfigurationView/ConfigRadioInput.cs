@@ -16,9 +16,9 @@ namespace MissionPlanner.GCSViews.ConfigurationView
         bool startup = false;
         bool run = false;
 
-        float[] rcmin = new float[8];
-        float[] rcmax = new float[8];
-        float[] rctrim = new float[8];
+        float[] rcmin = new float[14];
+        float[] rcmax = new float[14];
+        float[] rctrim = new float[14];
 
         Timer timer = new Timer();
 
@@ -49,11 +49,32 @@ namespace MissionPlanner.GCSViews.ConfigurationView
                 this.BARthrottle.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.currentStateBindingSource, "ch3in", true));
                 this.BARyaw.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.currentStateBindingSource, "ch4in", true));
             }
+            
+            //setup bindings
+            if (MainV2.comPort.MAV.param.ContainsKey("RCMAP_MODE"))
+            {
+                this.BAR5.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.currentStateBindingSource, "ch" + MainV2.comPort.MAV.param["RCMAP_MODE"] + "in", true));
+                this.BAR6.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.currentStateBindingSource, "ch" + MainV2.comPort.MAV.param["RCMAP_TUNE"] + "in", true));
+                this.BAR7.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.currentStateBindingSource, "ch" + MainV2.comPort.MAV.param["RCMAP_CH7"] + "in", true));
+                this.BAR8.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.currentStateBindingSource, "ch" + MainV2.comPort.MAV.param["RCMAP_CH8"] + "in", true));
+            }
+            else
+            {
+                this.BAR5.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.currentStateBindingSource, "ch5in", true));
+                this.BAR6.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.currentStateBindingSource, "ch6in", true));
+                this.BAR7.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.currentStateBindingSource, "ch7in", true));
+                this.BAR8.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.currentStateBindingSource, "ch8in", true));
+            }
 
-            this.BAR5.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.currentStateBindingSource, "ch5in", true));
-            this.BAR6.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.currentStateBindingSource, "ch6in", true));
-            this.BAR7.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.currentStateBindingSource, "ch7in", true));
-            this.BAR8.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.currentStateBindingSource, "ch8in", true));
+            if (MainV2.comPort.MAV.param.ContainsKey("RC9_MIN"))
+            {
+                this.BAR9.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.currentStateBindingSource, "ch9in", true));
+                this.BAR10.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.currentStateBindingSource, "ch10in", true));
+                this.BAR11.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.currentStateBindingSource, "ch11in", true));
+                this.BAR12.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.currentStateBindingSource, "ch12in", true));
+                this.BAR13.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.currentStateBindingSource, "ch13in", true));
+                this.BAR14.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.currentStateBindingSource, "ch14in", true));
+            }
 
             // setup rc update
             timer.Tick += new EventHandler(timer_Tick);
@@ -198,6 +219,25 @@ namespace MissionPlanner.GCSViews.ConfigurationView
                     rcmin[7] = Math.Min(rcmin[7], MainV2.comPort.MAV.cs.ch8in);
                     rcmax[7] = Math.Max(rcmax[7], MainV2.comPort.MAV.cs.ch8in);
 
+                    rcmin[8] = Math.Min(rcmin[8], MainV2.comPort.MAV.cs.ch9in);
+                    rcmax[8] = Math.Max(rcmin[8], MainV2.comPort.MAV.cs.ch9in);
+
+                    rcmin[9] = Math.Min(rcmin[9], MainV2.comPort.MAV.cs.ch10in);
+                    rcmax[9] = Math.Max(rcmin[9], MainV2.comPort.MAV.cs.ch10in);
+
+                    rcmin[10] = Math.Min(rcmin[10], MainV2.comPort.MAV.cs.ch11in);
+                    rcmax[10] = Math.Max(rcmin[10], MainV2.comPort.MAV.cs.ch11in);
+
+                    rcmin[11] = Math.Min(rcmin[11], MainV2.comPort.MAV.cs.ch12in);
+                    rcmax[11] = Math.Max(rcmin[11], MainV2.comPort.MAV.cs.ch12in);
+
+                    rcmin[12] = Math.Min(rcmin[12], MainV2.comPort.MAV.cs.ch13in);
+                    rcmax[12] = Math.Max(rcmin[12], MainV2.comPort.MAV.cs.ch13in);
+
+                    rcmin[13] = Math.Min(rcmin[13], MainV2.comPort.MAV.cs.ch14in);
+                    rcmax[13] = Math.Max(rcmin[13], MainV2.comPort.MAV.cs.ch14in);
+
+
                     BARroll.minline = (int)rcmin[0];
                     BARroll.maxline = (int)rcmax[0];
 
@@ -222,6 +262,24 @@ namespace MissionPlanner.GCSViews.ConfigurationView
                     BAR8.minline = (int)rcmin[7];
                     BAR8.maxline = (int)rcmax[7];
 
+                    BAR9.minline = (int)rcmin[8];
+                    BAR9.maxline = (int)rcmax[8];
+
+                    BAR10.minline = (int)rcmin[9];
+                    BAR10.maxline = (int)rcmax[9];
+
+                    BAR11.minline = (int)rcmin[10];
+                    BAR11.maxline = (int)rcmax[10];
+
+                    BAR12.minline = (int)rcmin[11];
+                    BAR12.maxline = (int)rcmax[11];
+
+                    BAR13.minline = (int)rcmin[12];
+                    BAR13.maxline = (int)rcmax[12];
+
+                    BAR14.minline = (int)rcmin[13];
+                    BAR14.maxline = (int)rcmax[13];
+
                 }
             }
 
@@ -237,10 +295,16 @@ namespace MissionPlanner.GCSViews.ConfigurationView
             rctrim[5] = MainV2.comPort.MAV.cs.ch6in;
             rctrim[6] = MainV2.comPort.MAV.cs.ch7in;
             rctrim[7] = MainV2.comPort.MAV.cs.ch8in;
+            rctrim[8] = MainV2.comPort.MAV.cs.ch9in;
+            rctrim[9] = MainV2.comPort.MAV.cs.ch10in;
+            rctrim[10] = MainV2.comPort.MAV.cs.ch11in;
+            rctrim[11] = MainV2.comPort.MAV.cs.ch12in;
+            rctrim[12] = MainV2.comPort.MAV.cs.ch13in;
+            rctrim[13] = MainV2.comPort.MAV.cs.ch14in;
 
             string data = "---------------\n";
 
-            for (int a = 0; a < 8; a++)
+            for (int a = 0; a < 14; a++)
             {
                 // we want these to save no matter what
                 BUT_Calibrateradio.Text = "Saving";
