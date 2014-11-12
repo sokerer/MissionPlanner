@@ -130,6 +130,8 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.map = new MissionPlanner.Controls.myGMAP();
             this.TRK_zoom = new MissionPlanner.Controls.MyTrackBar();
+            this.BUT_SaveGrid = new MissionPlanner.Controls.MyButton();
+            this.BUT_LoadGrid = new MissionPlanner.Controls.MyButton();
             this.groupBox5.SuspendLayout();
             this.tabCamera.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -768,6 +770,8 @@
             // 
             // tabSimple
             // 
+            this.tabSimple.Controls.Add(this.BUT_LoadGrid);
+            this.tabSimple.Controls.Add(this.BUT_SaveGrid);
             this.tabSimple.Controls.Add(this.groupBox6);
             this.tabSimple.Controls.Add(this.groupBox4);
             this.tabSimple.Controls.Add(this.BUT_Accept);
@@ -1018,6 +1022,20 @@
             this.TRK_zoom.Value = 2F;
             this.TRK_zoom.Scroll += new System.EventHandler(this.trackBar1_Scroll);
             // 
+            // BUT_SaveGrid
+            // 
+            resources.ApplyResources(this.BUT_SaveGrid, "BUT_SaveGrid");
+            this.BUT_SaveGrid.Name = "BUT_SaveGrid";
+            this.BUT_SaveGrid.UseVisualStyleBackColor = true;
+            this.BUT_SaveGrid.Click += new System.EventHandler(this.BUT_SaveGrid_Click);
+            // 
+            // BUT_LoadGrid
+            // 
+            resources.ApplyResources(this.BUT_LoadGrid, "BUT_LoadGrid");
+            this.BUT_LoadGrid.Name = "BUT_LoadGrid";
+            this.BUT_LoadGrid.UseVisualStyleBackColor = true;
+            this.BUT_LoadGrid.Click += new System.EventHandler(this.BUT_LoadGrid_Click);
+            // 
             // GridUI
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -1170,5 +1188,7 @@
         private System.Windows.Forms.TextBox TXT_headinghold;
         private System.Windows.Forms.Button BUT_headingholdminus;
         private System.Windows.Forms.Button BUT_headingholdplus;
+        private Controls.MyButton BUT_LoadGrid;
+        private Controls.MyButton BUT_SaveGrid;
     }
 }

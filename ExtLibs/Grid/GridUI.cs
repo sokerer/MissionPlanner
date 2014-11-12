@@ -1434,5 +1434,19 @@ namespace MissionPlanner
 
             return base.ProcessCmdKey(ref msg, keyData);
         }
+
+        private void BUT_SaveGrid_Click(object sender, EventArgs e)
+        {
+            SaveGrid();
+            
+            return;
+        }
+
+        private void BUT_LoadGrid_Click(object sender, EventArgs e)
+        {
+            LoadGrid();
+
+            return;
+        }
     }
 }
