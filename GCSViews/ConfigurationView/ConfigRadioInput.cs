@@ -50,11 +50,21 @@ namespace MissionPlanner.GCSViews.ConfigurationView
                 this.BARyaw.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.currentStateBindingSource, "ch4in", true));
             }
 
-            this.BAR5.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.currentStateBindingSource, "ch5in", true));
-            this.BAR6.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.currentStateBindingSource, "ch6in", true));
-            this.BAR7.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.currentStateBindingSource, "ch7in", true));
-            this.BAR8.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.currentStateBindingSource, "ch8in", true));
-
+            //setup bindings
+            if (MainV2.comPort.MAV.param.ContainsKey("RCMAP_MODE"))
+            {
+                this.BAR5.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.currentStateBindingSource, "ch" + MainV2.comPort.MAV.param["RCMAP_MODE"] + "in", true));
+                this.BAR6.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.currentStateBindingSource, "ch" + MainV2.comPort.MAV.param["RCMAP_TUNE"] + "in", true));
+                this.BAR7.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.currentStateBindingSource, "ch" + MainV2.comPort.MAV.param["RCMAP_AUX1"] + "in", true));
+                this.BAR8.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.currentStateBindingSource, "ch" + MainV2.comPort.MAV.param["RCMAP_AUX2"] + "in", true));
+            }
+            else
+            {
+                this.BAR5.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.currentStateBindingSource, "ch5in", true));
+                this.BAR6.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.currentStateBindingSource, "ch6in", true));
+                this.BAR7.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.currentStateBindingSource, "ch7in", true));
+                this.BAR8.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.currentStateBindingSource, "ch8in", true));
+            }
             // setup rc update
             timer.Tick += new EventHandler(timer_Tick);
         }
