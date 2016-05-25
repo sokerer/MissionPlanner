@@ -978,6 +978,16 @@ namespace MissionPlanner
         [DisplayText("Sonar Voltage (Volt)")]
         public float sonarvoltage { get; set; }
 
+        public float monvalue1 { get; set; }
+        public float monvolt1 { get; set; }
+        public float monvalue2 { get; set; }
+        public float monvolt2 { get; set; }
+        public float monvalue3 { get; set; }
+        public float monvolt3 { get; set; }
+        public float monvalue4 { get; set; }
+        public float monvolt4 { get; set; }
+
+        
         // current firmware
         public MainV2.Firmwares firmware = MainV2.Firmwares.ArduCopter2;
         public float freemem { get; set; }
@@ -1749,7 +1759,22 @@ namespace MissionPlanner
                         sonarvoltage = sonar.voltage;
                     }
 
-                    mavLinkMessage = MAV.getPacket((uint) MAVLink.MAVLINK_MSG_ID.POWER_STATUS);
+                    mavLinkMessage = MAV.getPacket((uint)MAVLink.MAVLINK_MSG_ID.MONITORING);
+                    if (mavLinkMessage != null)
+                    {
+                        var monitor = mavLinkMessage.ToStructure<MAVLink.mavlink_monitoring_t>();
+
+                        monvalue1 = monitor.data_value_1;
+                        monvolt1 = monitor.voltage_1;
+                        monvalue2 = monitor.data_value_2;
+                        monvolt2 = monitor.voltage_2;
+                        monvalue3 = monitor.data_value_3;
+                        monvolt3 = monitor.voltage_3;
+                        monvalue4 = monitor.data_value_4;
+                        monvolt4 = monitor.voltage_4;
+                    }
+
+                    mavLinkMessage = MAV.getPacket((uint)MAVLink.MAVLINK_MSG_ID.POWER_STATUS);
                     if (mavLinkMessage != null)
                     {
                         var power = mavLinkMessage.ToStructure<MAVLink.mavlink_power_status_t>();
