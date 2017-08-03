@@ -5,7 +5,7 @@ using System.Runtime.InteropServices;
 
 public partial class MAVLink
 {
-    public const string MAVLINK_BUILD_DATE = "Thu Jul 06 2017";
+    public const string MAVLINK_BUILD_DATE = "Thu Aug 03 2017";
     public const string MAVLINK_WIRE_PROTOCOL_VERSION = "2.0";
     public const int MAVLINK_MAX_PAYLOAD_LEN = 255;
 
@@ -163,6 +163,7 @@ public partial class MAVLink
 		new message_info(156, "MOUNT_CONFIGURE", 19, 6, 6, typeof( mavlink_mount_configure_t )),
 		new message_info(157, "MOUNT_CONTROL", 21, 15, 15, typeof( mavlink_mount_control_t )),
 		new message_info(158, "MOUNT_STATUS", 134, 14, 14, typeof( mavlink_mount_status_t )),
+		new message_info(159, "MONITORING", 50, 32, 32, typeof( mavlink_monitoring_t )),
 		new message_info(160, "FENCE_POINT", 78, 12, 12, typeof( mavlink_fence_point_t )),
 		new message_info(161, "FENCE_FETCH_POINT", 68, 3, 3, typeof( mavlink_fence_fetch_point_t )),
 		new message_info(162, "FENCE_STATUS", 189, 8, 8, typeof( mavlink_fence_status_t )),
@@ -407,6 +408,7 @@ DIGICAM_CONTROL = 155,
 MOUNT_CONFIGURE = 156,
 MOUNT_CONTROL = 157,
 MOUNT_STATUS = 158,
+MONITORING = 159,
 FENCE_POINT = 160,
 FENCE_FETCH_POINT = 161,
 FENCE_STATUS = 162,
@@ -2893,6 +2895,30 @@ AOA_SSA = 11020,
         public  byte target_system;
             /// <summary> Component ID </summary>
         public  byte target_component;
+    
+    };
+
+
+    [StructLayout(LayoutKind.Sequential,Pack=1,Size=32)]
+    ///<summary> Monitoring reporting </summary>
+    public struct mavlink_monitoring_t
+    {
+        /// <summary> data value monitor 1 </summary>
+        public  float data_value_1;
+            /// <summary> raw voltage if available, zero otherwise </summary>
+        public  float voltage_1;
+            /// <summary> data value monitor 2 </summary>
+        public  float data_value_2;
+            /// <summary> raw voltage if available, zero otherwise </summary>
+        public  float voltage_2;
+            /// <summary> data value monitor 3 </summary>
+        public  float data_value_3;
+            /// <summary> raw voltage if available, zero otherwise </summary>
+        public  float voltage_3;
+            /// <summary> data value monitor 4 </summary>
+        public  float data_value_4;
+            /// <summary> raw voltage if available, zero otherwise </summary>
+        public  float voltage_4;
     
     };
 
